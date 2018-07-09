@@ -48,6 +48,161 @@ foo();  // Uncaught ReferenceError: a is not defined
 */
 
 
+/* ES5 */
+
+var a = function() {
+  console.log("function");
+}
+//a();
+
+
+/* ES6 */
+
+const b = () => {
+	  console.log("arrow function");
+}
+//b();
+
+
+
+
+const print = text => {
+	  console.log(text);
+}
+// 파라미터가 1개일땐 괄호 생략 가능
+//print("test");
+
+
+
+const sum = (a, b) => {
+	return a + b;
+}
+//console.log(sum(1,2));
+
+
+
+
+const name = "Hudi";
+const job = "developer";
+
+// ` <-백틱(숫자 1번키보드 기호)
+
+//console.log(`제 이름은 ${name} 이고, 직업은 ${job} 입니다.`);
+//제 이름은 Hudi 이고, 직업은 developer 입니다.
+
+
+
+
+const hudi = {
+  myname: "조동현",
+  myjob: "developer",
+  skills: ["ES6", "React", "node.js"]
+}
+
+let { myname, myjob } = hudi;
+//비구조화 할당
+//console.log(name, myjob); // 조동현 developer
+
+
+
+
+const languages = ["Javascript", "Python", "Java", "C#"];
+const [first, second, third] = languages;
+
+//console.log(first, second, third);
+//Javascript Python Java
+
+
+
+const aa = [1,2,3];
+const bb = [3,4];
+const c = "끝";
+
+const d = [...aa, ...bb, c];
+
+//console.log(d);
+//[1, 2, 3, 3, 4, "끝"]
+
+
+
+const aaa = [1,2,3,4,5];
+const bbb = [...aaa].reverse();
+
+//console.log(`aaa: ${aaa}\nbbb: ${bbb}`);
+/*
+  a: 1,2,3,4,5
+  b: 5,4,3,2,1
+*/
+
+
+
+
+
+
+
+// class 
+
+/* ES5 */
+/* function Person(name, job) {
+  this.name = name;
+  this.job = job;
+}
+
+Person.prototype.print = function() {
+  console.log(this.job + " 직업을 가지고 있는 " + this.name + "씨");
+}
+
+var donghyun = new Person("조동현", "프론트엔드 개발자");
+
+donghyun.print(); */
+//프론트엔드 개발자 직업을 가지고 있는 조동현씨
+
+
+/* Es6 */
+
+class Person {
+  constructor(name, job) {
+    this.name = name
+    this.job = job
+  }
+
+  print() {
+    console.log(this.job + " 직업을 가지고 있는 " + this.name + "씨");
+  }
+}
+
+var donghyun = new Person("조동현", "프론트엔드 개발자");
+
+//donghyun.print();
+//프론트엔드 개발자 직업을 가지고 있는 조동현씨
+
+
+
+
+
+
+
+/* Default Parameter */
+
+/* ES5 */
+/* function foo(a, b, c) {
+  console.log(a, b, c);
+}
+
+foo('a'); */
+//a undefined undefined
+
+
+/* ES6 */
+
+function foo(a, b='b', c='c') {
+  console.log(a, b, c);
+}
+
+foo('a');
+//a b c
+
+
 
 
 
@@ -55,3 +210,16 @@ foo();  // Uncaught ReferenceError: a is not defined
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- endDom -->
