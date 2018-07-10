@@ -1,0 +1,58 @@
+<!-- http://ricostacruz.com/jquery.transit/ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exam_00</title>
+<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<h4>Exam_00</h4>
+<script type="text/javascript">
+	
+	var a = {};
+	
+	a.init = function(){
+		console.log("test");
+	}
+	
+	a.init2 = function(){
+		console.log("test2");
+	}
+	
+	a.init3 = () => {
+		  console.log("arrow function");
+	}
+	
+	a.init.init = () => {
+		 console.log("arrow function2");
+	}
+	
+	a.init.init.init = (a,b='b',c='c') => {
+		console.log(a,b,c);
+	}
+	
+	
+	a.init();
+	a.init2();
+	a.init3();
+	a.init.init();
+	a.init.init.init(1);
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- endDom -->
