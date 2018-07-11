@@ -1,0 +1,132 @@
+<!-- http://ricostacruz.com/jquery.transit/ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exam_prototype</title>
+</head>
+<body>
+<h4>Exam_prototype</h4>
+<script type="text/javascript">
+	
+	/* var a = {name:"foo"};
+	console.log(a);
+	console.log(a.name);
+	 */
+	/* a.prototype.foo = 'hello world';
+	console.log(a.foo); */ //error	
+	
+	/* var foo = {name : "foo"}; // foo 라는 객체를 생성.
+	foo.prototype.a='hello world';
+	console.log(foo.a); */ //error
+	
+/* 	function A() {};
+	var A = new A();
+	console.log(A); //constructor
+	 */
+	 
+	 
+	 /* 
+	 function foo(x) {
+	    this.x = x;
+	};
+	var A = new foo('hello'); 
+	console.log(A.x);
+	// hello
+	console.log(A.prototype.x)
+	//syntax error */
+	
+	/* //#예제 1.
+	var A = function () {
+	    this.x = function () {
+	         //do something
+	    };
+	};//property
+	
+	
+	//#예제 2.
+	var A = function () { };
+	A.prototype.x = function () {
+	    //do something
+	};//prototype */
+	
+	
+	
+	
+	/* 
+	
+	//#예제 1.
+	var A = function () {
+	    this.x = function () {
+	         console.log('hello');
+	    };
+	};
+	A.x=function() {
+	    console.log('world');
+	};
+	var B = new A();
+	var C = new A();
+	B.x();
+	//hello
+	C.x();
+	//hello
+
+	//#예제 2.
+	var A = function () { };
+	A.x=function() {
+	    console.log('hello');
+	};
+	A.prototype.x = function () {
+	     console.log('world');
+	};
+	var B = new A();
+	var C = new A();
+	B.x();
+	//world
+	C.x();
+	//world 
+	*/
+	
+	
+	/* 
+	//test
+	var test = function(){};
+	
+	test.test = function(){
+		console.log("hello");
+		this.x = function(){
+			console.log("hello2");
+		}
+	}
+	
+	console.log(test);
+	test.test();
+	
+	test.prototype.testx = function(){
+		console.log("world");
+	}
+	var testa = new test(); 
+	var testb = new test(); 
+	
+	testa.testx(); 
+	testb.testx();
+	 */
+	
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- endDom -->
