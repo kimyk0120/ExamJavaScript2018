@@ -1,4 +1,5 @@
 <!-- http://ricostacruz.com/jquery.transit/ -->
+<!-- https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67-->
 
 <!DOCTYPE html>
 <html>
@@ -113,6 +114,44 @@
 	testb.testx();
 	 */
 	
+	 
+	 /* 20180720 */
+	 
+	/*  function Person() {
+	  this.eyes = 2;
+	  this.nose = 1;
+	 }
+	 
+	 var kim  = new Person();
+	 var park = new Person();
+
+	 console.log(kim.eyes);  // => 2
+	 console.log(kim.nose);  // => 1
+	 console.log(park.eyes); // => 2
+	 console.log(park.nose); // => 1 */
+	 
+	 
+	 /* function Person() {}
+	 Person.prototype.eyes = 2;
+	 Person.prototype.nose = 1;
+	 var kim  = new Person();
+	 var park = new Person();
+	 console.log(kim.eyes); // => 2
+	 console.log(park.nose); // => 1 */
+	 
+	 /* function Person() {} // => 함수
+	 var personObject = new Person(); // => 함수로 객체를 생성 */
+	 
+	 
+	 /* var obj1 = {};  
+	 var obj2 = new Object(); // obj1와 같음 Object도 함수다!
+	 console.log(obj1);
+	 console.log(obj2); */
+		
+	 var obj3 = {};  	 
+	 var a = new obj3(); //constructor가 아니면 new를 사용할 수 없다.
+	 
+	 
 	
 </script>
 </body>
