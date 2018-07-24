@@ -2,8 +2,7 @@
  * '블록 하나에  거래내역을 저장한다'
  * 출처: http://abc1211.tistory.com/517?category=1003529 [길위의 개발자]
  */
-
-
+const sha256 = require('sha256');
 console.log("blockchain.js file called\n");
 
 
@@ -56,6 +55,14 @@ Blockchain.prototype.createNewTransaction = function(amount,sender,recipient){
 	return this.getLastBlock()['index'] + 1
 }
 
+
+
+//해쉬 값 리턴 함수
+Blockchain.prototype.hashBlock = function(previousBlockHash,currentBlockData,nonce){
+	const dataAsString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
+	const hash = sha256(dataAsString);
+	return hash
+}
 
 
 //Blockchain 모듈화

@@ -171,6 +171,10 @@ bitcoin.createNewBlock(3333,"ccccccc","3c3c3c3c3c3c");
  */
 
 
+// test
+//var hash = bitcoin.hashBlock("sss",null,"aaa");
+//console.log(hash);
+
 
 
 
