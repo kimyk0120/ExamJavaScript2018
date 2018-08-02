@@ -1,17 +1,112 @@
 <!-- http://blog.jeonghwan.net/2018/01/25/before-jquery.html -->
+<!-- https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector  --> 
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Exam_before_jQuery</title>
-<!-- <script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script> -->
+<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
 </head>
 <body>
-<h4>Exam_before_jQuery</h4>
+<h5>Exam_before_jQuery</h5>
+
+	<div id="app"></div>
+
+	<div class="container"></div>
+
+	<div id="datatest" data-product-id="G123">Guitar</div>
+
+	<a href="#">test</a>
+	
+	<div id="foo">foo</div>
+
 <script type="text/javascript">
 
-	
+
+/* Selector */
+var jApp = $("#app");
+var app = document.getElementById('app');
+var app2 = document.querySelector('#app');
+
+console.log(jApp);
+console.log(app);
+console.log(app2); 
+console.log("###############################################################");
+
+var jContainer = $('.container');
+var app = document.getElementsByClassName('container')
+var app2 = document.querySelector('.container');
+var app3 = document.querySelectorAll('.container');
+
+console.log(jApp);
+console.log(app);
+console.log(app2);
+console.log(app3);
+console.log("###############################################################");
+
+/* Data */
+var jData = $('#datatest').data('product-id');
+var data = document.querySelector('div#datatest').dataset.productId // 'G123' IE11 미만 지원 x
+var data2 = document.querySelector('div#datatest').getAttribute('data-product-id') // 'G123'
+
+console.log(jData);
+console.log(data);
+console.log(data2);
+console.log("###############################################################");
+
+
+/* Event !!! */
+document.addEventListener('DOMContentLoaded', () => { //dom ready
+  console.log("domReady");
+});
+
+document.querySelector('a').addEventListener('click', (evt) => { // on click
+	  console.log("a click");
+});
+document.querySelector('a').click();  // emit
+
+
+/* Style */
+$('#foo').addClass('active');
+document.querySelector('#foo').classList.add('active2');
+/* HTMLElement는 classList라는 DOMTokenList를 반환한다. 
+이것은 클래스를 추가하는 add() 함수 뿐만 아니라, remove(), toggle(), contains() 같은 유용한 메소드를 제공한다.
+하지만 여전히 IE에서는 메소드 별로 지원 버전이 다르다. 때문에 폴리필을 추가하거나 다른 방법을 사용해야 한다. */
+document.querySelector('#foo').className += ' active3';
+var foo = document.querySelector('#foo');
+console.log(foo);
+
+
+/* Text */
+$('#foo').text('Hello Chris');
+document.querySelector('#foo').innerHTML = 'Hello Chris2';
+
+
+/* Ajax */
+
+/* $.ajax('/resource').then(success, fail); */
+
+/* const req = new XMLHttpRequest();
+req.open('GET', '/resource', true);
+req.onreadystatechange = () => {
+  if (req.readyState === 4) {
+    if (req.status === 200) success()
+    else faile()
+  }
+}
+req.send(null); */
+
+
+
+/* Collection */
+$('li').each(() => {
+  $(this) // li element
+});
+
+Array.from(document.querySelectorAll('li')).forEach( (li) => {
+	  
+});
 
 </script>
 </body>
